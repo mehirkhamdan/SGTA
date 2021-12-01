@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<meta charset="utf-8">
+<div th:replace="head :: head"></div>
+
+<body>
+	<div th:replace="menu :: menu"></div>
+
+	<main class="container">
+		<div class="bg-light p-5 rounded">
+
+			<form action="#" th:action="@{/register}" th:object="${usuario}" method="POST">
+				
+				<h3>Cadastro de Usuários</h3>
+
+				<div class="row">
+					<div class="col">
+						<label for="email">Email</label>
+						<input class="col" th:field="*{email}" type="text" name="email"></input>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col">
+						<label for="senha">Password</label>
+						<input class="col" th:field="*{senha}" type="password" name="senha"></input>
+					</div>
+				</div>
+				<br>
+
+				<button class="btn btn-primary mb-2" type="submit">Salvar</button>
+			</form>
+		</div>
+	</main>
+
+	<div th:replace="footer :: footer"></div>
+
+</body>
+
+</html>
